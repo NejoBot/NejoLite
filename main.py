@@ -16,17 +16,17 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-import discord
+import nextcord
 import requests
 import logging
 import json
 
 logging.basicConfig(level=logging.INFO)
 
-intents = discord.Intents.default()
+intents = nextcord.Intents.default()
 intents.members = True
 
-client = discord.Client(intents=intents)
+client = nextcord.Client(intents=intents)
 
 BLACKLIST_URL = "https://kickthespy.pet/ids"
 
@@ -51,7 +51,7 @@ async def on_member_join(member):
     if str(member.id) in blacklisted_ids:
         try:
             await member.send("You are blacklisted, as you probably are spy.pet. Contact Nejo Developers for more information.")
-        except discord.Forbidden:
+        except nextcord.Forbidden:
             logging.warning(f"Could not send DM to {member.name}")
         await member.kick(reason="User is blacklisted")
 
