@@ -1,6 +1,6 @@
 """
 Nejo - A protection bot for Discord.
-Copyright (C) 2024 ItsAsheer
+Copyright (C) 2024 ItsAsheer, NejoBot developers and external contributers.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
